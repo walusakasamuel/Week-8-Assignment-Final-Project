@@ -12,7 +12,7 @@ _Today’s mission: Create and explore a database using both Terminal and MySQL 
   - Paste this SQL command:
      
 ```sql
-CREATE DATABASE <provide_a_database_name>;
+CREATE DATABASE <your_cool_database_name>;
 ```
 
 Creating database using Terminal
