@@ -27,3 +27,9 @@ CREATE DATABASE <your_cool_database_name>;
 mysql -u root -p
 ```
 _📌 Tip: type it in confidently_
+
+🏗️ **Step 2: Create a New Database:**
+```bash
+CREATE DATABASE <your_cool_database_name>;
+```
+_🎉 Be creative with the name,Some fun ideas: school, journal, adventure._
