@@ -33,3 +33,14 @@ _📌 Tip: type it in confidently_
 CREATE DATABASE <your_cool_database_name>;
 ```
 _🎉 Be creative with the name,Some fun ideas: school, journal, adventure._
+
+👀 **Step 3: Check if It’s There:**
+```bash
+SHOW DATABASES;
+```
+_🕵️‍♂️ Can you find yours in the list?_
+🎯 **Step 4: Start Using It:**
+```bash
+USE <your_cool_database_name>;
+```
+_💡 This tells MySQL, “Hey, I’m working on this one now."_
