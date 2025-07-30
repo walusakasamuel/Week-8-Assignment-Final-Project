@@ -1,7 +1,7 @@
 ## 🎯 Hands-on Class Activity: Let’s Build a Database Together
 _Today’s mission: Create and explore a database using both Terminal and MySQL Workbench._
 
-### 🖥️ Part 1: Using MySQL Workbench (a.k.a. Click & Code Mode 🖱️)
+## 🖥️ Part 1: Using MySQL Workbench (a.k.a. Click & Code Mode 🖱️)
 
  🌀 **Step 1: Open Workbench & Connect:**
    - Open MySQL Workbench
@@ -14,22 +14,16 @@ _Today’s mission: Create and explore a database using both Terminal and MySQL 
 ```sql
 CREATE DATABASE <your_cool_database_name>;
 ```
+- Click the ⚡ Execute button.
 
-Creating database using Terminal
+🔍 **Step 3: View Your Database:**
+   - Refresh the Schemas section on the left
+   - Find your database name there
 
-### log to your terminal
+## 💻 Part 2: Using the Terminal (a.k.a. Hacker Mode 😎)
+
+🪄 **Step 1: Log in to MySQL:**
 ```bash
-mysql -uroot -p
+mysql -u root -p
 ```
-ii. Create a database
-```sql
-CREATE DATABASE <provide_a_database_name>;
-```
-iii. Confirm database exists
-```sql
-SHOW DATABASES;
-```
-iv. How to tell the engine which database to work with
-```sql
-USE <the_name_of_your_database>;
-```
+_📌 Tip: type it in confidently_
