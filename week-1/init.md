@@ -20,6 +20,12 @@ CREATE DATABASE <your_cool_database_name>;
    - Refresh the Schemas section on the left
    - Find your database name there
 
+💥 **Step 5: Drop a Database (Carefully):**
+```bash
+DROP DATABASE <your_cool_database_name>;
+```
+ _📣 Ask before running: Are you sure you want to delete it?_
+
 ## 💻 Part 2: Using the Terminal (a.k.a. Hacker Mode 😎)
 
 🪄 **Step 1: Log in to MySQL:**
