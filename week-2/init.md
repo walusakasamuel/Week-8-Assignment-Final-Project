@@ -52,9 +52,3 @@ _🕵️‍♂️ Can you find yours in the list?_
 USE <your_cool_database_name>;
 ```
 _💡 This tells MySQL, “Hey, I’m working on this one now."_
-
-⚠️ **Step 5: Drop (Delete) a Database:**
-```bash
-DROP DATABASE <your_cool_database_name>;
-```
-_🚨 Warning: This command permanently deletes the database and everything inside it._
