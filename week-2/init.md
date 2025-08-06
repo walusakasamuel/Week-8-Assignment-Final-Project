@@ -3,7 +3,7 @@
 _Today’s mission: Create and explore a database, perform CRUD operations using both Terminal and MySQL Workbench._
 
 ### 🧪 Load a Sample Database
-If you’ve downloaded a sample SQL file (e.g. salesDB.sql), here’s how to load it:
+If you’ve downloaded a [sample SQL](https://drive.google.com/file/d/1ClfnXsCfg5OnB7aLsS3zjaPSBo66YApM/view?usp=sharing) file (e.g. salesDB.sql), here’s how to load it:
 1. Make sure you know where the file is saved on your computer.
 2. In your terminal, run:
 ```bash
