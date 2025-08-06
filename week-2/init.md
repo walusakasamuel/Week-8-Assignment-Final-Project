@@ -25,7 +25,6 @@ CREATE DATABASE <your_cool_database_name>;
 ```bash
  USE <your_cool_database_name>;
 ```
- _📣 Ask before running: Are you sure you want to delete it?_
 
 ## 💻 Part 2: Using the Terminal (a.k.a. Hacker Mode 😎)
 
@@ -52,3 +51,17 @@ _🕵️‍♂️ Can you find yours in the list?_
 USE <your_cool_database_name>;
 ```
 _💡 This tells MySQL, “Hey, I’m working on this one now."_
+
+### 🧪 Load a Sample Database
+If you’ve downloaded a sample SQL file (e.g. salesDB.sql), here’s how to load it:
+1. Make sure you know where the file is saved on your computer.
+2. In your terminal, run:
+```bash
+mysql -u root -p < salesDB.sql
+```
+3. Then open MySQL and run:
+```bash
+USE salesDB;
+SHOW TABLES;
+```
+_🔍 Voilà! You should see the tables loaded from the file._
