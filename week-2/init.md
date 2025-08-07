@@ -122,7 +122,11 @@ ADD PRIMARY KEY (column_name);
 ALTER TABLE your_table_name 
 DROP PRIMARY KEY;
 ```
-
+## Deleting Tables
+Use the **DROP TABLE** statement to delete an existing table and all its data.
+```bash
+DROP TABLE employees;  
+```
 ### 🧪 Load a Sample Database
 If you’ve downloaded a [sample SQL](https://drive.google.com/file/d/1ClfnXsCfg5OnB7aLsS3zjaPSBo66YApM/view?usp=sharing) file (e.g. salesDB.sql), here’s how to load it:
 1. Make sure you know where the file is saved on your computer.
