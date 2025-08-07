@@ -122,6 +122,12 @@ ADD PRIMARY KEY (column_name);
 ALTER TABLE your_table_name 
 DROP PRIMARY KEY;
 ```
+## RENAME a table
+
+The **RENAME** command only applies to changing the table's name
+```bash
+RENAME TABLE old_table_name TO new_table_name;
+```
 ## Delete all rows
 
 Use the **TRUNCATE TABLE** statement to delete all rows from a table efficiently.
