@@ -11,7 +11,19 @@ CREATE TABLE tasks (
     due_date DATE
 );
 ```
-
+**another example.....**
+```bash
+CREATE TABLE contacts(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(320) NOT NULL
+);
+```
+**insert data**
+```bash
+INSERT INTO contacts(name, email)
+VALUES('Jonte', 'john@mail.com');
+```
 
 ### Defining a structured customer table with various data types.
 ```bash
