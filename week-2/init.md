@@ -183,5 +183,12 @@ SET
 WHERE
     employeeNumber = 1056;
 ```
-
+**Using UPDATE to replace string example**
+```bash
+UPDATE employees
+SET email = REPLACE(email,'@classicmodelcars.com','@mycars.org')
+WHERE
+   jobTitle = 'Sales Rep' AND
+   officeCode = 6;
+```
 
