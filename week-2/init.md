@@ -44,8 +44,12 @@ VALUES
 ('Carol', 'carol.wanjiku@example.com', '+25434567', 'Mombasa', '1988-12-15');
 
 ```
+### 📦 Bonus: Check Your Data
+```bash
+SELECT * FROM customers;
+```
 
-
+> 💬 Challenge: Try inserting your own data with your name. Change the values be creative.
 
 ### 🧪 Load a Sample Database
 If you’ve downloaded a [sample SQL](https://drive.google.com/file/d/1ClfnXsCfg5OnB7aLsS3zjaPSBo66YApM/view?usp=sharing) file (e.g. salesDB.sql), here’s how to load it:
