@@ -26,7 +26,10 @@ DESCRIBE customers;
 ```bash
 SHOW COLUMNS customers;
 ```
-**Insert data**
+**Inserting data**
+
+Time to bring your table to life. Let’s add some sample customers, feel free to come up with your own names if you're feeling creative.
+
 ```bash
 INSERT INTO customers (name, email, phone, address, date_of_birth)
 VALUES
