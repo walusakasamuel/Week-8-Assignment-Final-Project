@@ -22,7 +22,7 @@ Let’s peek under the hood and see the table structure.
 ```bash
 DESCRIBE customers;
 ```
-SHOW COLUMNS:
+**This helps you confirm all columns were created properly**
 ```bash
 SHOW COLUMNS customers;
 ```
