@@ -83,14 +83,14 @@ Modifying table after creation.
 
 **Adding Columns**
 
-Use the ALTER TABLE statement to add a new column to an existing table.
+Use the **ALTER TABLE** statement to add a new column to an existing table.
 ```bash
 ALTER TABLE customers
 ADD COLUMN paid BOOLEAN DEFAULT FALSE;
 ```
 **Dropping Columns**
 
-You can remove a column from a table using the ALTER TABLE statement.
+You can remove a column from a table using the **ALTER TABLE **statement.
 ```bash
 ALTER TABLE customers
 DROP COLUMN paid;
@@ -105,14 +105,14 @@ MODIFY COLUMN address VARCHAR(20);
 ```
 **Renaming Columns**
 
-You can rename a column using the ALTER TABLE statement.
+You can rename a column using the **ALTER TABLE** statement.
 ```bash
 ALTER TABLE customers
 CHANGE COLUMN old_column_name new_column_name VARCHAR(50);
 ```
 **Adding Constraints - Primary Key**
 
-To add a primary key to an existing table, you can use the ALTER TABLE statement with the ADD PRIMARY KEY clause.
+To add a primary key to an existing table, you can use the **ALTER TABLE** statement with the ADD PRIMARY KEY clause.
 ```bash
 ALTER TABLE table_name
 ADD PRIMARY KEY (column_name);
@@ -123,6 +123,8 @@ ALTER TABLE your_table_name
 DROP PRIMARY KEY;
 ```
 ## Delete all rows
+
+Use the **TRUNCATE TABLE** statement to delete all rows from a table efficiently.
 ```bash
 TRUNCATE TABLE customers;
 ```
