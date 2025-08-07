@@ -208,7 +208,9 @@ WHERE email = 'alice@example.com';
 ```
 ## Order By
 To sort the rows in the result set, you add the **ORDER BY** clause to the SELECT statement.
-Sort customer
+
+If you want to sort customers by the last name in descending order.
+
 ```bash
 SELECT 
   contactLastname, 
