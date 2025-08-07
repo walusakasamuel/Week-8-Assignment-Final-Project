@@ -90,7 +90,7 @@ ADD COLUMN paid BOOLEAN DEFAULT FALSE;
 ```
 **Dropping Columns**
 
-You can remove a column from a table using the **ALTER TABLE **statement.
+You can remove a column from a table using the **ALTER TABLE** statement.
 ```bash
 ALTER TABLE customers
 DROP COLUMN paid;
