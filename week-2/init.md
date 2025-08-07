@@ -15,6 +15,17 @@ CREATE TABLE customers (
     signup_timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 ```
+#### Viewing Table Structure
+🔍 **Step 2: Inspect What You Created**
+
+Let’s peek under the hood and see the table structure.
+```bash
+DESCRIBE customers;
+```
+SHOW COLUMNS:
+```bash
+SHOW COLUMNS customers;
+```
 **Insert data**
 ```bash
 INSERT INTO customers (name, email, phone, address, date_of_birth)
