@@ -171,6 +171,17 @@ WHERE
     employeeNumber = 1056;
 ```
 
+**UPDATE to modify values in multiple columns**
 
+To update values in the multiple columns, you need to specify the assignments in the SET clause. 
+
+```bash
+UPDATE employees 
+SET 
+    lastname = 'alice',
+    email = 'jane@mail.com'
+WHERE
+    employeeNumber = 1056;
+```
 
 
