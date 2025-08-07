@@ -2,6 +2,16 @@
 ## 🎯 Hands-on Class Activity: Let’s Build a Database Together
 _Today’s mission: Create and explore a database, perform CRUD operations using both Terminal and MySQL Workbench._
 
+#### CREATE TABLE statement example
+```bash
+CREATE TABLE tasks (
+    id INT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    start_date DATE,
+    due_date DATE
+);
+```
+
 
 ### Defining a structured customer table with various data types.
 ```bash
