@@ -140,6 +140,21 @@ Use the **DROP TABLE** statement to delete an existing table and all its data.
 ```bash
 DROP TABLE customers;  
 ```
+
+## DML Commands
+**UPDATE command**
+You can modify data in an existing table using the UPDATE command
+
+```bash
+UPDATE employees 
+SET 
+    email = 'jane@mail.com'
+WHERE
+    employeeNumber = 1056;
+```
+
+
+
 ### 🧪 Load a Sample Database
 If you’ve downloaded a [sample SQL](https://drive.google.com/file/d/1ClfnXsCfg5OnB7aLsS3zjaPSBo66YApM/view?usp=sharing) file (e.g. salesDB.sql), here’s how to load it:
 1. Make sure you know where the file is saved on your computer.
