@@ -24,7 +24,7 @@ DESCRIBE customers;
 ```
 **This helps you confirm all columns were created properly**
 ```bash
-SHOW COLUMNS customers;
+SHOW COLUMNS FROM customers;
 ```
 **Inserting data**
 
