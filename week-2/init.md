@@ -78,7 +78,7 @@ SELECT * FROM customers;
 > 💬 Challenge: Try inserting your own data with your name. Change the values be creative.
 
 
-### Altering Tables
+## ✅ Altering Tables
 Modifying table after creation.
 
 **Adding Columns**
@@ -95,6 +95,22 @@ You can remove a column from a table using the ALTER TABLE statement.
 ALTER TABLE customers
 DROP COLUMN paid;
 ```
+
+**Modifying Data Types**
+
+Change the data type of an existing column with the ALTER TABLE statement.
+```bash
+ALTER TABLE customers
+MODIFY COLUMN address VARCHAR(20);
+```
+**Renaming Columns**
+
+You can rename a column using the ALTER TABLE statement.
+```bash
+ALTER TABLE customers
+CHANGE COLUMN old_column_name new_column_name VARCHAR(50);
+```
+
 ### 🧪 Load a Sample Database
 If you’ve downloaded a [sample SQL](https://drive.google.com/file/d/1ClfnXsCfg5OnB7aLsS3zjaPSBo66YApM/view?usp=sharing) file (e.g. salesDB.sql), here’s how to load it:
 1. Make sure you know where the file is saved on your computer.
