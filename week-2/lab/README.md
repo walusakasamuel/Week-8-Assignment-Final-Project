@@ -3,7 +3,11 @@ Python script to create,read,update,delete (CRUD) a row from a **table**
 
 
 ## Run Locally
-
+Create a database
+```bash
+CREATE DATABASE movies;
+USE movies;
+```
 Clone the project
 
 ```bash
@@ -13,7 +17,7 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd lab-3
+  cd lab
 ```
 
 Install dependencies
