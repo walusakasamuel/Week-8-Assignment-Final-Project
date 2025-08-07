@@ -110,7 +110,13 @@ You can rename a column using the ALTER TABLE statement.
 ALTER TABLE customers
 CHANGE COLUMN old_column_name new_column_name VARCHAR(50);
 ```
+**Adding Constraints - Primary Key**
 
+To add a primary key to an existing table, you can use the ALTER TABLE statement with the ADD PRIMARY KEY clause.
+```bash
+ALTER TABLE table_name
+ADD PRIMARY KEY (column_name);
+```
 ### 🧪 Load a Sample Database
 If you’ve downloaded a [sample SQL](https://drive.google.com/file/d/1ClfnXsCfg5OnB7aLsS3zjaPSBo66YApM/view?usp=sharing) file (e.g. salesDB.sql), here’s how to load it:
 1. Make sure you know where the file is saved on your computer.
