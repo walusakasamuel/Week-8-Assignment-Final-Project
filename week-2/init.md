@@ -206,3 +206,26 @@ DELETE FROM customers;
 DELETE FROM customers
 WHERE email = 'alice@example.com';
 ```
+## Order By
+To sort the rows in the result set, you add the **ORDER BY** clause to the SELECT statement.
+Sort customer
+```bash
+SELECT 
+  contactLastname, 
+  contactFirstname 
+FROM 
+  customers 
+ORDER BY 
+  contactLastname DESC;
+```
+**Selecting a random employee**
+```bash
+SELECT 
+    employeeNumber
+FROM
+    employees
+WHERE
+    jobtitle = 'Sales Rep'
+ORDER BY RAND()
+LIMIT 1;
+```
