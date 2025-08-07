@@ -2,6 +2,37 @@
 ## 🎯 Hands-on Class Activity: Let’s Build a Database Together
 _Today’s mission: Create and explore a database, perform CRUD operations using both Terminal and MySQL Workbench._
 
+
+### Defining a structured customer table with various data types.
+```bash
+CREATE TABLE customers (
+    id CHAR(36) PRIMARY KEY DEFAULT (UUID()),
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    phone VARCHAR(20),
+    address TEXT,
+    date_of_birth DATE,
+    signup_timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+**Insert data**
+```bash
+INSERT INTO customers (name, email, phone, address, date_of_birth)
+VALUES
+('Alice', 'alice.kimani@example.com', '+254723478', 'Nairobi', '1995-08-10');
+
+INSERT INTO customers (name, email, phone, address, date_of_birth)
+VALUES
+('Brian', 'brian.otieno@example.com', '+2548765432', 'Kisumu', '1990-02-25');
+
+INSERT INTO customers (name, email, phone, address, date_of_birth)
+VALUES
+('Carol', 'carol.wanjiku@example.com', '+25434567', 'Mombasa', '1988-12-15');
+
+```
+
+
+
 ### 🧪 Load a Sample Database
 If you’ve downloaded a [sample SQL](https://drive.google.com/file/d/1ClfnXsCfg5OnB7aLsS3zjaPSBo66YApM/view?usp=sharing) file (e.g. salesDB.sql), here’s how to load it:
 1. Make sure you know where the file is saved on your computer.
