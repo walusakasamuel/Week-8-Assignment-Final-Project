@@ -191,4 +191,18 @@ WHERE
    jobTitle = 'Sales Rep' AND
    officeCode = 6;
 ```
+**DELETE command**
 
+DELETE allows you to remove data from your table.
+
+**Basic Deletion**
+```bash
+-- Delete all records from the customers table
+DELETE FROM customers;
+```
+**Conditional Deletion**
+```bash
+-- Delete records where email is 'alice@example.com'
+DELETE FROM customers
+WHERE email = 'alice@example.com';
+```
