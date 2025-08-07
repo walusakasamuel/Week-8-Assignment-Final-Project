@@ -24,7 +24,11 @@ CREATE TABLE contacts(
 INSERT INTO contacts(name, email)
 VALUES('Jonte', 'john@mail.com');
 ```
+**Fetch Data**
 
+```bash
+SELECT * FROM contacts;
+```
 ### Defining a structured customer table with various data types.
 ```bash
 CREATE TABLE customers (
