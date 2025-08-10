@@ -26,7 +26,7 @@ CREATE TABLE users (
     email VARCHAR(255)
 );
 ```
-### MySQL COMMIT example
+### COMMIT Example
 ```sql
 START TRANSACTION;
 
@@ -37,4 +37,23 @@ UPDATE users
 SET email = 'peter@mail.com' 
 WHERE id = 1;
 COMMIT;
+```
+Select data from the users table
+```sql
+SELECT * FROM users;
+```
+### ROLLBACK Example
+```sql
+START TRANSACTION;
+INSERT INTO users (id, username) 
+VALUES (2, 'sharon');
+
+UPDATE users 
+SET email = 'sharon@mail.com' 
+WHERE id = 2;
+ROLLBACK;
+```
+Select data from the users table
+```sql
+SELECT * FROM users;
 ```
