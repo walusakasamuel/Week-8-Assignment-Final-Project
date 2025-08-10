@@ -96,3 +96,48 @@ SELECT
 FROM 
     products;
 ```
+### GROUP BY Examples
+To group the order statuses:
+```sql
+SELECT 
+  status 
+FROM 
+  orders 
+GROUP BY 
+  status;
+```
+To obtain the number of orders in each status:
+```sql
+SELECT 
+  status, 
+  COUNT(*) 
+FROM 
+  orders 
+GROUP BY 
+  status;
+```
+To get total amount of each order:
+```sql
+SELECT 
+  orderNumber, 
+  SUM(quantityOrdered * priceEach) AS total 
+FROM 
+  orderdetails 
+GROUP BY 
+  orderNumber;
+```
+#### HAVING Clause
+Allows you to apply a condition to the groups returned by the GROUP BY clause and only include groups that meet the specified condition.
+To find which order has total sales greater than 1000:
+```sql
+SELECT 
+  ordernumber, 
+  SUM(quantityOrdered) AS itemsCount, 
+  SUM(priceeach * quantityOrdered) AS total 
+FROM 
+  orderdetails 
+GROUP BY 
+  ordernumber 
+HAVING 
+  total > 1000;
+```
