@@ -57,3 +57,28 @@ Select data from the users table
 ```sql
 SELECT * FROM users;
 ```
+### Aggregate Functions
+**AVG() function** calculates the average value of a set of values
+```sql
+SELECT 
+    AVG(buyPrice) avg_buy_price
+FROM 
+    products;
+```
+**COUNT() function** function returns the number of the values in a set.
+```sql
+SELECT 
+    COUNT(*) AS total
+FROM 
+    products;
+```
+**SUM() function** returns the sum of values in a set.
+```sql
+SELECT 
+    productCode, 
+    SUM(priceEach * quantityOrdered) total
+FROM
+    orderDetails
+GROUP BY productCode
+ORDER BY total DESC;
+```
