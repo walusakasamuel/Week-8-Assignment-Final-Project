@@ -82,3 +82,17 @@ FROM
 GROUP BY productCode
 ORDER BY total DESC;
 ```
+**MAX() function** returns the maximum value in a set.
+```sql
+SELECT 
+     MAX(buyPrice) highest_price
+FROM 
+     products;
+```
+**MIN() function** returns the minimum value in a set of values
+```sql
+SELECT 
+    MIN(buyPrice) lowest_price
+FROM 
+    products;
+```
