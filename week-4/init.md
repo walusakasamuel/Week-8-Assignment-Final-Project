@@ -27,7 +27,8 @@ FROM
 WHERE
     jobTitle = 'Sales Rep';
 ```
-MySQL DROP INDEX statement
+### MySQL DROP INDEX statement
+Use the DROP INDEX statement to remove an existing index.
 ```sql
 DROP INDEX idxTitle ON employees;
 ```
