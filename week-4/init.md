@@ -10,6 +10,11 @@ To show the users on the current MySQL Server:
 SELECT user 
 FROM mysql.user;
 ```
+### Change MySQL User Password
+To change the password of the a user using the ALTER TABLE … IDENTIFIED BY statement
+```sql
+ALTER USER jontefresh@localhost IDENTIFIED BY 'abcd'; -- new password
+```
 ### MySQL GRANT statement
 You use the **GRANT** statement to assign one or more privileges to a user account.
 **Global Privileges**
