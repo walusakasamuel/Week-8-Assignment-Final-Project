@@ -56,6 +56,11 @@ The **RENAME USER** statement allows you to rename one or more existing user acc
 ```sql
 RENAME USER jontefresh@localhost TO john@localhost;
 ```
+### 🗑️ MySQL DROP USER statement
+To remove a user account from the MySQL Server, you use the **DROP USER** statement as follows:
+```sql
+DROP USER john@localhost;
+```
 ### 🛡️ MySQL GRANT statement
 You use the **GRANT** statement to assign one or more privileges to a user account.
 **Global Privileges**
