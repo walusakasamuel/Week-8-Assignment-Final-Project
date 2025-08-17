@@ -26,3 +26,11 @@ The **REVOKE** statement revokes one or more privileges from a user account.
 ```sql
 REVOKE ALL, GRANT OPTION FROM jontefresh@localhost;
 ```
+```sql
+-- create a new user 
+CREATE USER tamara@localhost IDENTIFIED BY '1234';
+-- grant privilege
+GRANT SELECT, UPDATE, INSERT ON salesdb.* TO tamara@localhost;
+-- revoke privilege
+REVOKE INSERT, UPDATE ON salesdb.* FROM  tamara@localhost;
+```
