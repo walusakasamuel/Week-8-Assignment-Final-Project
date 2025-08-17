@@ -31,7 +31,7 @@ WHERE
     jobTitle = 'Sales Rep';
 ```
 ### 🗑️ MySQL DROP INDEX statement
-Use the DROP INDEX statement to remove an existing index.
+Use the **DROP INDEX** statement to remove an existing index.
 ```sql
 DROP INDEX idxTitle ON employees;
 ```
@@ -47,12 +47,12 @@ To show the users on the current MySQL Server:
 SELECT user FROM mysql.user;
 ```
 ### 🔑 Change MySQL User Password
-To change the password of the a user using the ALTER TABLE … IDENTIFIED BY statement
+To change the password of the a user use the **ALTER** … IDENTIFIED BY statement
 ```sql
 ALTER USER jontefresh@localhost IDENTIFIED BY 'abcd'; -- new password
 ```
 ### ✏️ MySQL RENAME USER statement
-The RENAME USER statement allows you to rename one or more existing user accounts.
+The **RENAME USER** statement allows you to rename one or more existing user accounts.
 ```sql
 RENAME USER jontefresh@localhost TO john@localhost;
 ```
