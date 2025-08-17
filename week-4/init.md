@@ -44,8 +44,7 @@ CREATE USER jontefresh@localhost IDENTIFIED BY '1234';
 ```
 To show the users on the current MySQL Server:
 ```sql
-SELECT user 
-FROM mysql.user;
+SELECT user FROM mysql.user;
 ```
 ### 🔑 Change MySQL User Password
 To change the password of the a user using the ALTER TABLE … IDENTIFIED BY statement
