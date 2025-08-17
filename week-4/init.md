@@ -15,6 +15,11 @@ To change the password of the a user using the ALTER TABLE … IDENTIFIED BY sta
 ```sql
 ALTER USER jontefresh@localhost IDENTIFIED BY 'abcd'; -- new password
 ```
+### MySQL RENAME USER statement
+The RENAME USER statement allows you to rename one or more existing user accounts.
+```sql
+RENAME USER jontefresh@localhost TO john@localhost;
+```
 ### MySQL GRANT statement
 You use the **GRANT** statement to assign one or more privileges to a user account.
 **Global Privileges**
