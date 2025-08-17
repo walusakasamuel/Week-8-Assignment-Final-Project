@@ -47,17 +47,17 @@ To show the users on the current MySQL Server:
 SELECT user 
 FROM mysql.user;
 ```
-### Change MySQL User Password
+### 🔑 Change MySQL User Password
 To change the password of the a user using the ALTER TABLE … IDENTIFIED BY statement
 ```sql
 ALTER USER jontefresh@localhost IDENTIFIED BY 'abcd'; -- new password
 ```
-### MySQL RENAME USER statement
+### ✏️ MySQL RENAME USER statement
 The RENAME USER statement allows you to rename one or more existing user accounts.
 ```sql
 RENAME USER jontefresh@localhost TO john@localhost;
 ```
-### MySQL GRANT statement
+### 🛡️ MySQL GRANT statement
 You use the **GRANT** statement to assign one or more privileges to a user account.
 **Global Privileges**
 To grant all privileges in all databases in the current database server
@@ -68,7 +68,7 @@ To show the privileges assigned to jontefresh
 ```sql
 SHOW GRANTS FOR jontefresh@localhost;
 ```
-### MySQL roles
+### 🎭 MySQL Roles
 MySQL database server may have multiple users with the same set of privileges.
 A **role** is essentially a named collection of privileges.
 #### Roles in the Coffeehouse
