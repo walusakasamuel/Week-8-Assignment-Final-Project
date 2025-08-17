@@ -1,6 +1,6 @@
 ## 🎯 Hands-on Class Activity
-### MySQL CREATE INDEX
-Use the CREATE INDEX statement to create a new index for a table.
+### Speeding up Queries with Indexes
+Test the performance plan:
 ```sql
 SELECT 
     employeeNumber, 
@@ -11,12 +11,15 @@ FROM
 WHERE
     jobTitle = 'Sales Rep';
 ```
+Use the **CREATE INDEX** statement to create a new index for a table. Now create an index to make the search faster:
 ```sql
 CREATE INDEX idxTitle ON employees(jobTitle);
 ```
+Check if the index was created:
 ```sql
 SHOW INDEXES FROM employees;
 ```
+Test the performance plan:
 ```sql
 EXPLAIN SELECT 
     employeeNumber, 
