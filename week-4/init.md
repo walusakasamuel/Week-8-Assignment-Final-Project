@@ -11,7 +11,9 @@ FROM
 WHERE
     jobTitle = 'Sales Rep';
 ```
-Use the **CREATE INDEX** statement to create a new index for a table. Now create an index to make the search faster:
+Use the **CREATE INDEX** statement to create a new index for a table.
+
+Now create an index to make the search faster:
 ```sql
 CREATE INDEX idxTitle ON employees(jobTitle);
 ```
@@ -38,6 +40,7 @@ DROP INDEX idxTitle ON employees;
 
 ### 👤 MySQL CREATE USER statement
 To create a new user in the MySQL database, you use the **CREATE USER** statement.
+
 Let’s create a new user:
 ```sql
 CREATE USER jontefresh@localhost IDENTIFIED BY '1234';
@@ -72,8 +75,28 @@ To show the privileges assigned to jontefresh
 ```sql
 SHOW GRANTS FOR jontefresh@localhost;
 ```
+**Database Privileges**
+
+Apply to all objects within a specific database (all tables, views, etc. in that database).
+```sql
+-- create a new user
+CREATE USER mercy@localhost IDENTIFIED BY '1234';
+-- giving access to one database only
+GRANT SELECT, INSERT, UPDATE, DELETE ON salesdb.* TO 'mercy'@'localhost';
+```
+**Table Privileges**
+
+Apply to specific tables within a database.
+```sql
+-- create a new user
+CREATE USER gerald@localhost IDENTIFIED BY '1234';
+-- giving access to only one table inside the database.
+GRANT SELECT, INSERT ON salesdb.customers TO 'gerald'@'localhost';
+```
 ### 🎭 MySQL Roles
+
 MySQL database server may have multiple users with the same set of privileges.
+
 A **role** is essentially a named collection of privileges.
 #### Roles in the Coffeehouse
 Your coffeehouse has different teams:
