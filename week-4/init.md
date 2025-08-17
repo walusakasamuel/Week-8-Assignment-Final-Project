@@ -66,7 +66,9 @@ DROP USER john@localhost;
 ```
 ### 🛡️ MySQL GRANT statement
 You use the **GRANT** statement to assign one or more privileges to a user account.
+
 **Global Privileges**
+
 To grant all privileges in all databases in the current database server
 ```sql
 GRANT ALL ON *.* TO jontefresh@localhost;
@@ -123,6 +125,7 @@ SELECT * FROM customers;
 CREATE ROLE dev, accounts, barista;
 ```
 **Grant privileges to each role:**
+
 The following statement grants all privileges to dev role:
 ```sql
 GRANT ALL ON coffehouse.* TO dev;
@@ -153,6 +156,7 @@ To verify the role assignments:
 SHOW GRANTS FOR henry@localhost;
 ```
 **Setting default roles**
+
 To specify which roles should be active each time a user account connects to the database server, you can use the SET DEFAULT ROLE statement.
 ```sql
 SET DEFAULT ROLE ALL TO testuser@localhost;
@@ -167,6 +171,7 @@ To delete one or more roles, you use the DROP ROLE statement:
 DROP ROLE barista;
 ```
 ### ❌ MySQL REVOKE statement
+
 The **REVOKE** statement revokes one or more privileges from a user account.
 ```sql
 REVOKE ALL, GRANT OPTION FROM jontefresh@localhost;
