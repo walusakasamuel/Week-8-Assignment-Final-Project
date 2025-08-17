@@ -1,4 +1,36 @@
 ## 🎯 Hands-on Class Activity
+### MySQL CREATE INDEX
+Use the CREATE INDEX statement to create a new index for a table.
+```sql
+SELECT 
+    employeeNumber, 
+    lastName, 
+    firstName
+FROM
+    employees
+WHERE
+    jobTitle = 'Sales Rep';
+```
+```sql
+CREATE INDEX idxTitle ON employees(jobTitle);
+```
+```sql
+SHOW INDEXES FROM employees;
+```
+```sql
+EXPLAIN SELECT 
+    employeeNumber, 
+    lastName, 
+    firstName
+FROM
+    employees
+WHERE
+    jobTitle = 'Sales Rep';
+```
+MySQL DROP INDEX statement
+```sql
+DROP INDEX idxTitle ON employees;
+```
 
 ### MySQL CREATE USER statement
 To create a new user in the MySQL database, you use the **CREATE USER** statement.
