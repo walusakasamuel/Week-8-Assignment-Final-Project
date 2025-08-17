@@ -70,7 +70,11 @@ SHOW GRANTS FOR jontefresh@localhost;
 ### MySQL roles
 MySQL database server may have multiple users with the same set of privileges.
 A **role** is essentially a named collection of privileges.
-**roles example**
+#### Roles in the Coffeehouse
+Your coffeehouse has different teams:
+- 👩‍💻 Developers (dev)
+- 📊 Accounts team (accounts)
+- ☕ Baristas (barista)
 ```sql
 CREATE DATABASE coffeehouse;
 USE coffeehouse;
