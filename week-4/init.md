@@ -138,7 +138,7 @@ To delete one or more roles, you use the DROP ROLE statement:
 ```sql
 DROP ROLE barista;
 ```
-### MySQL REVOKE statement
+### ❌ MySQL REVOKE statement
 The **REVOKE** statement revokes one or more privileges from a user account.
 ```sql
 REVOKE ALL, GRANT OPTION FROM jontefresh@localhost;
