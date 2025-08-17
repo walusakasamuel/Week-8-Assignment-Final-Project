@@ -63,7 +63,8 @@ GRANT SELECT ON cofeehouse.* TO barista;
 CREATE USER henry@localhost IDENTIFIED BY 'pass';
 
 -- read access user
-CREATE USER wayne@localhost IDENTIFIED BY 'pass';    
+CREATE USER wayne@localhost IDENTIFIED BY 'pass';
+CREATE USER testuser@localhost IDENTIFIED BY 'pass';     
 
 -- read/write users
 CREATE USER brenda@localhost IDENTIFIED BY '1234';   
@@ -72,6 +73,20 @@ CREATE USER ann@localhost IDENTIFIED BY '1234';
 To verify the role assignments:
 ```sql
 SHOW GRANTS FOR henry@localhost;
+```
+**Setting default roles**
+To specify which roles should be active each time a user account connects to the database server, you can use the SET DEFAULT ROLE statement.
+```sql
+SET DEFAULT ROLE ALL TO testuser@localhost;
+```
+**Revoking privileges from roles**
+```sql
+REVOKE INSERT, UPDATE, DELETE  ON crm.* FROM accounts;
+```
+**Removing roles**
+To delete one or more roles, you use the DROP ROLE statement:
+```sql
+DROP ROLE barista;
 ```
 ### MySQL REVOKE statement
 The **REVOKE** statement revokes one or more privileges from a user account.
