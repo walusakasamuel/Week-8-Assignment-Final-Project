@@ -21,6 +21,54 @@ To show the privileges assigned to jontefresh
 ```sql
 SHOW GRANTS FOR jontefresh@localhost;
 ```
+### MySQL roles
+MySQL database server may have multiple users with the same set of privileges.
+A **role** is essentially a named collection of privileges.
+**roles example**
+```sql
+CREATE DATABASE coffeehouse;
+USE coffeehouse;
+CREATE TABLE customers(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    first_name VARCHAR(255) NOT NULL, 
+    last_name VARCHAR(255) NOT NULL, 
+    phone VARCHAR(15) NOT NULL,
+    email VARCHAR(255)
+);
+INSERT INTO customers(first_name,last_name,phone,email)
+VALUES('James','brown','123456','james@mail.com'),
+      ('Michael','white','123789','white@mail.com');
+SELECT * FROM customers;
+```
+**create new roles**
+```sql
+CREATE ROLE dev, accounts, barista;
+```
+**Granting privileges to roles**
+The following statement grants all privileges to dev role:
+```sql
+GRANT ALL ON coffehouse.* TO dev;
+```
+The following statement grants **INSERT**, **UPDATE**, and **DELETE** privileges to accounts role
+```sql
+GRANT INSERT, UPDATE, DELETE ON coffeehouse.* TO accounts;
+```
+The following statement grants **SELECT** privilege to barista role
+```sql
+GRANT SELECT ON cofeehouse.* TO barista;
+```
+### Assigning roles to user accounts
+```sql
+-- developer user 
+CREATE USER jontefresh@localhost IDENTIFIED BY 'pass';
+
+-- read access user
+CREATE USER wayne@localhost IDENTIFIED BY 'pass';    
+
+-- read/write users
+CREATE USER brenda@localhost IDENTIFIED BY '1234';   
+CREATE USER ann@localhost IDENTIFIED BY '1234';
+```
 ### MySQL REVOKE statement
 The **REVOKE** statement revokes one or more privileges from a user account.
 ```sql
