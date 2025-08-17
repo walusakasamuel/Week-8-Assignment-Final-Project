@@ -90,11 +90,11 @@ VALUES('James','brown','123456','james@mail.com'),
       ('Michael','white','123789','white@mail.com');
 SELECT * FROM customers;
 ```
-**create new roles**
+**Let’s create roles:**
 ```sql
 CREATE ROLE dev, accounts, barista;
 ```
-**Granting privileges to roles**
+**Grant privileges to each role:**
 The following statement grants all privileges to dev role:
 ```sql
 GRANT ALL ON coffehouse.* TO dev;
