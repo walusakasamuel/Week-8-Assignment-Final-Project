@@ -17,3 +17,7 @@ Apply to all databases in a MySQL Server:
 ```sql
 GRANT ALL ON *.* TO jontefresh@localhost;
 ```
+To show the privileges assigned to jontefresh
+```sql
+SHOW GRANTS FOR jontefresh@localhost;
+```
