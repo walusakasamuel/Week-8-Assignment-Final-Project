@@ -60,7 +60,7 @@ GRANT SELECT ON cofeehouse.* TO barista;
 ### Assigning roles to user accounts
 ```sql
 -- developer user 
-CREATE USER jontefresh@localhost IDENTIFIED BY 'pass';
+CREATE USER henry@localhost IDENTIFIED BY 'pass';
 
 -- read access user
 CREATE USER wayne@localhost IDENTIFIED BY 'pass';    
@@ -68,6 +68,10 @@ CREATE USER wayne@localhost IDENTIFIED BY 'pass';
 -- read/write users
 CREATE USER brenda@localhost IDENTIFIED BY '1234';   
 CREATE USER ann@localhost IDENTIFIED BY '1234';
+```
+To verify the role assignments:
+```sql
+SHOW GRANTS FOR henry@localhost;
 ```
 ### MySQL REVOKE statement
 The **REVOKE** statement revokes one or more privileges from a user account.
