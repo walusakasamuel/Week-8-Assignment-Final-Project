@@ -7,4 +7,24 @@ The CSV file has the following columns:
 - money → The amount paid (e.g., 4.50)
 - coffee_name → The type of coffee sold (e.g., Latte, Espresso)
 
+### ✅ Learning Outcomes
+By the end of this lab, you will be able to:
+- Create a database and tables with appropriate data types.
+- Import CSV data into a relational database.
+- Run queries to generate business insights.
+- Think like a database administrator handling real company data.
+
 ### 🔧 Lab Tasks
+1. Create a new database
+    - Name the database: **java**
+ 2. Create a table
+    - Name the table: **sales**
+    - Define columns with appropriate **data types**
+ 3. Import data from the **CSV** file
+    - Use **LOAD DATA INFILE**
+4. Verify that the data has been loaded
+5. Practice queries (Management requests some reports)
+   - Find total revenue for each day.
+   - Find the most popular coffee.
+   - Find revenue per payment method.
+  
