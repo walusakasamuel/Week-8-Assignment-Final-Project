@@ -57,7 +57,7 @@ ALTER USER jontefresh@localhost IDENTIFIED BY 'abcd'; -- new password
 ### ✏️ MySQL RENAME USER statement
 The **RENAME USER** statement allows you to rename one or more existing user accounts.
 ```sql
-RENAME USER jontefresh@localhost TO john@localhost;
+RENAME USER 'jontefresh'@'localhost' TO 'john'@'localhost';
 ```
 ### 🗑️ MySQL DROP USER statement
 To remove a user account from the MySQL Server, you use the **DROP USER** statement as follows:
