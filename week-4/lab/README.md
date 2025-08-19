@@ -6,3 +6,5 @@ The CSV file has the following columns:
 - cash_type → The payment method (e.g., Cash, Card, Mobile)
 - money → The amount paid (e.g., 4.50)
 - coffee_name → The type of coffee sold (e.g., Latte, Espresso)
+
+### 🔧 Lab Tasks
