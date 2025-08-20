@@ -113,11 +113,16 @@ CREATE TABLE customers(
     first_name VARCHAR(255) NOT NULL, 
     last_name VARCHAR(255) NOT NULL, 
     phone VARCHAR(15) NOT NULL,
-    email VARCHAR(255)
+    email VARCHAR(255) UNIQUE,
+    amount DECIMAL(10,2) CHECK(amount>0)
 );
-INSERT INTO customers(first_name,last_name,phone,email)
-VALUES('James','brown','123456','james@mail.com'),
-      ('Michael','white','123789','white@mail.com');
+INSERT INTO customers(first_name,last_name,phone,email,amount)
+VALUES
+('James','brown','123456','james@mail.com',300),
+('Michael','white','123789','white@mail.com',150),
+('Mary','smith','123789','smith@mail.com',150),
+('Louis','peters','123789','peters@mail.com',1100),
+('Brenda','audrey','123789','audrey@mail.com',1200);
 SELECT * FROM customers;
 ```
 **Let’s create roles:**
