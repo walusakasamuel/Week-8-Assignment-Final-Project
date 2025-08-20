@@ -127,7 +127,7 @@ SELECT * FROM customers;
 ```
 **Let’s create roles:**
 ```sql
-CREATE ROLE dev, accounts, barista;
+CREATE ROLE dev, accounts, barista,interns;
 ```
 **Grant privileges to each role:**
 
