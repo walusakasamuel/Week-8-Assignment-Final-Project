@@ -133,7 +133,7 @@ CREATE ROLE dev, accounts, barista,interns;
 
 The following statement grants all privileges to dev role:
 ```sql
-GRANT ALL ON coffehouse.* TO dev;
+GRANT ALL ON coffeehouse.* TO dev;
 ```
 The following statement grants **INSERT**, **UPDATE**, and **DELETE** privileges to accounts role
 ```sql
