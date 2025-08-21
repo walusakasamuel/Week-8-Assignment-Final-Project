@@ -160,6 +160,12 @@ To verify the role assignments:
 ```sql
 SHOW GRANTS FOR henry@localhost;
 ```
+**Assigning Permission to users using ROLES**
+```sql
+GRANT dev TO henry@localhost;
+GRANT  accounts TO brenda@localhost;
+GRANT barista TO wayne@localhost;
+```
 **Setting default roles**
 
 To specify which roles should be active each time a user account connects to the database server, you can use the SET DEFAULT ROLE statement.
