@@ -3,6 +3,38 @@ _Your mission today as a junior database administrator is to explore how employe
 
 You’ll use different types of **JOINs** to uncover hidden stories inside the database.
 ### 🚀 Joins and Relationships
+#### 📚 Relationships in MySQL
+In databases, relationships describe how tables are connected.
+##### 1️⃣ One-to-One
+One row in Table A is linked to exactly one row in Table B.
+```sql
+USE salesdb;
+-- Employee table
+CREATE TABLE Employee (
+  EmployeeId INT PRIMARY KEY,
+  FullName VARCHAR(100) NOT NULL
+);
+
+-- IDCard table (1:1 with Employee)
+CREATE TABLE IDCard (
+  CardId INT PRIMARY KEY,
+  EmployeeId INT UNIQUE, -- ensures only one card per employee
+  IssueDate DATE,
+  FOREIGN KEY (EmployeeId) REFERENCES Employee(EmployeeId)
+);
+
+-- Insert sample data
+INSERT INTO Employee VALUES (1, 'Brian Otieno'), (2, 'Faith Wanjiru');
+INSERT INTO IDCard VALUES (101, 1, '2025-01-01'), (102, 2, '2025-01-10');
+
+-- Join to see the relationship
+SELECT E.FullName, C.CardId, C.IssueDate
+FROM Employee E
+INNER JOIN IDCard C ON E.EmployeeId = C.EmployeeId;
+
+```
+#### 🏗️ Database Setup
+We’ve created a simple system with employees, their projects, and where they live.
 ```sql
 CREATE DATABASE safari;
 USE safari;
@@ -85,7 +117,7 @@ INNER JOIN Projects P ON E.EmployeeId = P.EmployeeId;
 
 **LEFT JOIN clause**
 
-returns all rows from the left table, irrespective of whether a matching row from the right table exists or not.
+Returns all rows from the left table, irrespective of whether a matching row from the right table exists or not.
 
 ```sql
 -- Write a query to show who which employee is still waiting for a project assignment.
@@ -96,7 +128,7 @@ LEFT JOIN Projects P ON E.EmployeeId = P.EmployeeId;
 
 **RIGHT JOIN clause**
 
-returns all rows from the right table regardless of having matching rows from the left table or not.
+Returns all rows from the right table regardless of having matching rows from the left table or not.
 
 ```sql
 -- Write a query to find which projects are waiting for staff allocation.
@@ -104,3 +136,4 @@ SELECT P.ProjectId, P.ProjectName, E.FullName, E.Department
 FROM Employee E
 RIGHT JOIN Projects P ON E.EmployeeId = P.EmployeeId;
 ```
+
