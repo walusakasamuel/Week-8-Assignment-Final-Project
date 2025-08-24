@@ -1,4 +1,7 @@
 ## 🎯 Hands-on Class Activity
+_Your mission today as a junior database administrator is to explore how employees, projects, and addresses are connected._
+
+You’ll use different types of **JOINs** to uncover hidden stories inside the database.
 ### 🚀 Joins and Relationships
 ```sql
 CREATE DATABASE safari;
