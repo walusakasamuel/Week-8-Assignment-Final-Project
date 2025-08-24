@@ -1,6 +1,8 @@
 ## 🎯 Hands-on Class Activity
 ### 🚀 Joins and Relationships
+
 **INNER JOIN clause**
+
 The **INNER JOIN** matches each row in one table with every row in other tables and allows you to query rows that contain columns from both tables.
 ```sql
 SELECT 
