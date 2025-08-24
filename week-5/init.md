@@ -9,28 +9,28 @@ In databases, relationships describe how tables are connected.
 One row in Table A is linked to exactly one row in Table B.
 ```sql
 USE salesdb;
--- Employee table
-CREATE TABLE Employee (
-  EmployeeId INT PRIMARY KEY,
+-- Staff table
+CREATE TABLE staff (
+  staffId INT PRIMARY KEY,
   FullName VARCHAR(100) NOT NULL
 );
 
--- IDCard table (1:1 with Employee)
+-- IDCard table (1:1 with Staff)
 CREATE TABLE IDCard (
   CardId INT PRIMARY KEY,
-  EmployeeId INT UNIQUE, -- ensures only one card per employee
+  staffId INT UNIQUE, -- ensures only one card per employee
   IssueDate DATE,
-  FOREIGN KEY (EmployeeId) REFERENCES Employee(EmployeeId)
+  FOREIGN KEY (staffId) REFERENCES staff(staffId)
 );
 
 -- Insert sample data
-INSERT INTO Employee VALUES (1, 'Brian Otieno'), (2, 'Faith Wanjiru');
+INSERT INTO staff VALUES (1, 'Brian Otieno'), (2, 'Faith Wanjiru');
 INSERT INTO IDCard VALUES (101, 1, '2025-01-01'), (102, 2, '2025-01-10');
 
 -- Join to see the relationship
-SELECT E.FullName, C.CardId, C.IssueDate
-FROM Employee E
-INNER JOIN IDCard C ON E.EmployeeId = C.EmployeeId;
+SELECT S.FullName, C.CardId, C.IssueDate
+FROM staff S
+INNER JOIN IDCard C ON S.EmployeeId = C.staffId;
 
 ```
 #### 🏗️ Database Setup
