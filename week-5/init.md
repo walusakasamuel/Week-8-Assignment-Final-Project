@@ -25,3 +25,15 @@ INNER JOIN orderdetails
     USING(orderNumber)
 GROUP BY orderNumber;
 ```
+**LEFT JOIN clause**
+returns all rows from the left table, irrespective of whether a matching row from the right table exists or not.
+```sql
+SELECT
+	customerNumber,
+	customerName,
+	orderNumber,
+	status
+FROM
+	customers
+LEFT JOIN orders USING (customerNumber);
+```
