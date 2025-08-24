@@ -26,6 +26,7 @@ INNER JOIN orderdetails
 GROUP BY orderNumber;
 ```
 **LEFT JOIN clause**
+
 returns all rows from the left table, irrespective of whether a matching row from the right table exists or not.
 ```sql
 SELECT
@@ -36,4 +37,18 @@ SELECT
 FROM
 	customers
 LEFT JOIN orders USING (customerNumber);
+```
+Using the **LEFT JOIN** to find customers without any orders
+```sql
+SELECT 
+    c.customerNumber, 
+    c.customerName, 
+    o.orderNumber, 
+    o.status
+FROM
+    customers c
+LEFT JOIN orders o 
+    ON c.customerNumber = o.customerNumber
+WHERE
+    orderNumber IS NULL;
 ```
