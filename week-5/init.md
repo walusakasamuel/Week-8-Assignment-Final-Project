@@ -71,15 +71,12 @@ INSERT INTO Address (EmployeeId, Country, County, City) VALUES
 **INNER JOIN clause**
 
 The **INNER JOIN** matches each row in one table with every row in other tables and allows you to query rows that contain columns from both tables.
+
+Write a query to show which employees are currently assigned to projects.
 ```sql
-SELECT 
-    productCode, 
-    productName, 
-    textDescription
-FROM
-    products 
-INNER JOIN productlines  
-    USING(productline);
+SELECT E.EmployeeId, E.FullName, E.Department, A.City, P.ProjectName
+FROM Employee E
+INNER JOIN Projects P ON E.EmployeeId = P.EmployeeId;
 ```
 ```sql
 SELECT 
