@@ -47,7 +47,7 @@ INSERT INTO Projects (ProjectName, EmployeeId, StartDate, EndDate) VALUES
 ('Create E-learning App for Schools', 1004, NOW(), DATE_ADD(NOW(), INTERVAL 30 DAY)),
 ('Fix Jambojet Online Booking System', 1001, NOW(), DATE_ADD(NOW(), INTERVAL 7 DAY)),
 ('Build SACCO Loan Management System', 1008, NOW(), DATE_ADD(NOW(), INTERVAL 15 DAY)),
-('Develop WordPress Plugin for Local SME', NULL, NOW(), DATE_ADD(NOW(), INTERVAL 10 DAY));
+('Develop a Plugin for Local SME', NULL, NOW(), DATE_ADD(NOW(), INTERVAL 10 DAY));
 
 -- Address table
 CREATE TABLE Address (
@@ -72,73 +72,32 @@ INSERT INTO Address (EmployeeId, Country, County, City) VALUES
 
 The **INNER JOIN** matches each row in one table with every row in other tables and allows you to query rows that contain columns from both tables.
 
-Write a query to show which employees are currently assigned to projects.
+
 ```sql
-SELECT E.EmployeeId, E.FullName, E.Department, A.City, P.ProjectName
+-- Write a query to show which employees are currently assigned to projects.
+SELECT E.EmployeeId, E.FullName, E.Department, P.ProjectName
 FROM Employee E
 INNER JOIN Projects P ON E.EmployeeId = P.EmployeeId;
 ```
-```sql
-SELECT 
-    orderNumber,
-    status,
-    SUM(quantityOrdered * priceEach) total
-FROM
-    orders 
-INNER JOIN orderdetails 
-    USING(orderNumber)
-GROUP BY orderNumber;
-```
+
 **LEFT JOIN clause**
 
 returns all rows from the left table, irrespective of whether a matching row from the right table exists or not.
+
 ```sql
-SELECT
-	customerNumber,
-	customerName,
-	orderNumber,
-	status
-FROM
-	customers
-LEFT JOIN orders USING (customerNumber);
+-- Write a query to show who which employee is still waiting for a project assignment.
+SELECT E.EmployeeId, E.FullName, E.Department, P.ProjectName
+FROM Employee E
+LEFT JOIN Projects P ON E.EmployeeId = P.EmployeeId;
 ```
-Using the **LEFT JOIN** to find customers without any orders
-```sql
-SELECT 
-    c.customerNumber, 
-    c.customerName, 
-    o.orderNumber, 
-    o.status
-FROM
-    customers c
-LEFT JOIN orders o 
-    ON c.customerNumber = o.customerNumber
-WHERE
-    orderNumber IS NULL;
-```
+
 **RIGHT JOIN clause**
 
 returns all rows from the right table regardless of having matching rows from the left table or not.
+
 ```sql
-SELECT 
-    employeeNumber, 
-    customerNumber
-FROM
-    customers
-RIGHT JOIN employees 
-    ON salesRepEmployeeNumber = employeeNumber
-ORDER BY 
-	employeeNumber;
-```
-find employees who are not in charge of any customers
-```sql
-SELECT 
-    employeeNumber, 
-    customerNumber
-FROM
-    customers
-RIGHT JOIN employees ON 
-	salesRepEmployeeNumber = employeeNumber
-WHERE customerNumber is NULL
-ORDER BY employeeNumber;
+-- Write a query to find which projects are waiting for staff allocation.
+SELECT P.ProjectId, P.ProjectName, E.FullName, E.Department
+FROM Employee E
+RIGHT JOIN Projects P ON E.EmployeeId = P.EmployeeId;
 ```
