@@ -44,7 +44,6 @@ CREATE TABLE Department (
   deptId INT PRIMARY KEY,
   deptName VARCHAR(100) NOT NULL
 );
-
 -- Employee table (Many employees can belong to one department)
 CREATE TABLE Employee (
   empId INT PRIMARY KEY,
@@ -52,20 +51,31 @@ CREATE TABLE Employee (
   deptId INT,
   FOREIGN KEY (deptId) REFERENCES Department(deptId)
 );
-
 -- Insert sample data
-INSERT INTO Department VALUES (1, 'Finance'), (2, 'IT');
+INSERT INTO Department(deptId,deptName) VALUES (1, 'Finance'), (2, 'IT');
 
-INSERT INTO Employee VALUES 
+INSERT INTO Employee(empId,empName,deptid) VALUES 
 (101, 'Alice Akinyi', 1),
 (102, 'James Kariuki', 1),
-(103, 'Kevin Mwangi', 2);
-
+(103, 'Kevin Mwangi', 2),
+(104,'Mercy James',NULL),
+(105,'Alice sanele', NULL);
+```
+Example join
+```sql
 -- Join to see the relationship
+-- Inner join 
 SELECT D.deptName, E.empName
 FROM Department D
 INNER JOIN Employee E ON D.deptId = E.deptId;
-
+-- Left Join
+SELECT E.empName, D.deptName
+FROM Employee E
+LEFT JOIN Department D ON E.deptId = D.deptId;
+-- Right join
+SELECT D.deptName, E.empName
+FROM Employee E
+RIGHT JOIN Department D ON E.deptId = D.deptId;
 ```
 ##### 3️⃣ Many-to-Many
 
