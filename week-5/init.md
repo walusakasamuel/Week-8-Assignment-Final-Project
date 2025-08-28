@@ -54,7 +54,7 @@ CREATE TABLE Employee (
   FOREIGN KEY (deptId) REFERENCES Department(deptId)
 );
 -- Insert sample data
-INSERT INTO Department(deptId,deptName) VALUES (1, 'Finance'), (2, 'IT');
+INSERT INTO Department(deptId,deptName) VALUES (1, 'Finance'), (2, 'IT'),(3,'Marketing');
 
 INSERT INTO Employee(empId,empName,deptid) VALUES 
 (101, 'Alice Akinyi', 1),
