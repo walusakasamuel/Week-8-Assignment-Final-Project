@@ -29,10 +29,11 @@ INSERT INTO IDCard VALUES (101, 1, '2025-01-01'), (102, 2, '2025-01-10');
 ```
 Example join
 ```sql
+-- Inner join
 -- Join to see the relationship
 SELECT S.FullName, C.CardId, C.IssueDate
 FROM staff S
-INNER JOIN IDCard C ON S.EmployeeId = C.staffId;
+INNER JOIN IDCard C ON S.staffId = C.staffId;
 ```
 ##### 2️⃣ One-to-Many
 
