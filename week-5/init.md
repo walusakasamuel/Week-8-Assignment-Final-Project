@@ -118,13 +118,14 @@ INSERT INTO BookAuthor VALUES
 (102, 2), -- Chimamanda wrote Half of a Yellow Sun
 (102, 1); -- Ngugi also contributed to Half of a Yellow Sun
 (103,3) -- Damilare Kuku book
-
+```
+Example join
+```sql
 -- Join to see the relationship
 SELECT B.title, A.authorName
 FROM Book B
 INNER JOIN BookAuthor BA ON B.bookId = BA.bookId
 INNER JOIN Author A ON BA.authorId = A.authorId;
-
 ```
 ## Joins
 #### 🏗️ Database Setup
