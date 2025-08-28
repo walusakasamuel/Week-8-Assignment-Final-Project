@@ -109,15 +109,15 @@ CREATE TABLE BookAuthor (
 );
 
 -- Insert sample data
-INSERT INTO Author VALUES (1, 'Ngugi wa Thiong\'o'), (2, 'Chimamanda Adichie'),(3,'Damilare Kuku');
-INSERT INTO Book VALUES (101, 'The River Between'), (102, 'Half of a Yellow Sun'),(103,'Nearly all men in Lagos are Mad');
-
+INSERT INTO Author(authorId,authorName) VALUES (1, 'Ngugi wa Thiong\'o'), (2, 'Chimamanda Adichie'),(3,'Damilare Kuku');
+INSERT INTO Book(bookId,title) VALUES (101, 'The River Between'), (102, 'Half of a Yellow Sun'),(103,'Nearly all men in Lagos are Mad');
+select * from book;
 -- Link authors to books
-INSERT INTO BookAuthor VALUES 
+INSERT INTO BookAuthor(bookId,authorId) VALUES 
 (101, 1), -- Ngugi wrote The River Between
 (102, 2), -- Chimamanda wrote Half of a Yellow Sun
-(102, 1); -- Ngugi also contributed to Half of a Yellow Sun
-(103,3) -- Damilare Kuku book
+(102, 1), -- Ngugi also contributed to Half of a Yellow Sun
+(103,3); -- Damilare Kuku book
 ```
 Example join
 ```sql
