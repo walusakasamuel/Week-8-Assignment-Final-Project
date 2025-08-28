@@ -33,6 +33,87 @@ FROM staff S
 INNER JOIN IDCard C ON S.EmployeeId = C.staffId;
 
 ```
+##### 2️⃣ One-to-Many
+
+One row in Table A can be linked to many rows in Table B.
+
+Example: One department has many employees.
+```sql
+-- Department table
+CREATE TABLE Department (
+  deptId INT PRIMARY KEY,
+  deptName VARCHAR(100) NOT NULL
+);
+
+-- Employee table (Many employees can belong to one department)
+CREATE TABLE Employee (
+  empId INT PRIMARY KEY,
+  empName VARCHAR(100) NOT NULL,
+  deptId INT,
+  FOREIGN KEY (deptId) REFERENCES Department(deptId)
+);
+
+-- Insert sample data
+INSERT INTO Department VALUES (1, 'Finance'), (2, 'IT');
+
+INSERT INTO Employee VALUES 
+(101, 'Alice Akinyi', 1),
+(102, 'James Kariuki', 1),
+(103, 'Kevin Mwangi', 2);
+
+-- Join to see the relationship
+SELECT D.deptName, E.empName
+FROM Department D
+INNER JOIN Employee E ON D.deptId = E.deptId;
+
+```
+##### 3️⃣ Many-to-Many
+
+One row in Table A can be linked to many rows in Table B, and vice versa.
+
+Example: A book can have many authors, and an author can write many books.
+
+_To implement this, we use a junction table (also called a bridge or linking table)._
+```sql
+-- Author table
+CREATE TABLE Author (
+  authorId INT PRIMARY KEY,
+  authorName VARCHAR(100) NOT NULL
+);
+
+-- Book table
+CREATE TABLE Book (
+  bookId INT PRIMARY KEY,
+  title VARCHAR(100) NOT NULL
+);
+
+-- Junction table to represent Many-to-Many
+CREATE TABLE BookAuthor (
+  bookId INT,
+  authorId INT,
+  PRIMARY KEY (bookId, authorId),
+  FOREIGN KEY (bookId) REFERENCES Book(bookId),
+  FOREIGN KEY (authorId) REFERENCES Author(authorId)
+);
+
+-- Insert sample data
+INSERT INTO Author VALUES (1, 'Ngugi wa Thiong\'o'), (2, 'Chimamanda Adichie');
+INSERT INTO Book VALUES (101, 'The River Between'), (102, 'Half of a Yellow Sun');
+
+-- Link authors to books
+INSERT INTO BookAuthor VALUES 
+(101, 1), -- Ngugi wrote The River Between
+(102, 2), -- Chimamanda wrote Half of a Yellow Sun
+(102, 1); -- Ngugi also contributed to Half of a Yellow Sun (example)
+
+-- Join to see the relationship
+SELECT B.title, A.authorName
+FROM Book B
+INNER JOIN BookAuthor BA ON B.bookId = BA.bookId
+INNER JOIN Author A ON BA.authorId = A.authorId;
+
+```
+## Joins
 #### 🏗️ Database Setup
 We’ve created a simple system with employees, their projects, and where they live.
 ```sql
