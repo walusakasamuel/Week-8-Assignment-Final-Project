@@ -54,6 +54,7 @@ INSERT INTO Student_Courses (Student_id, Course_Name) VALUES
 
 Eliminates partial dependencies by ensuring that non-key attributes depend only on the primary key. What this means, in essence, is that there should be a direct relationship between each column and the primary key, and not between other columns.
 ##### Unnormalized (violates 2NF)
+
 ```sql
 CREATE TABLE Student_Course_Progress (
     Student_id INT,
