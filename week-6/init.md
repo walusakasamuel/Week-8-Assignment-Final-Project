@@ -52,7 +52,9 @@ INSERT INTO Student_Courses (Student_id, Course_Name) VALUES
 ```
  ### Second Normal Form (2NF)
 
-Eliminates partial dependencies by ensuring that non-key attributes depend only on the primary key. What this means, in essence, is that there should be a direct relationship between each column and the primary key, and not between other columns.
+Eliminates partial dependencies by ensuring that **non-key attributes** depend only on the **primary key**.
+
+What this means, in essence, is that there should be a direct relationship between each column and the primary key, and not between other columns.
 ##### Unnormalized (violates 2NF)
 
 ```sql
@@ -71,7 +73,7 @@ INSERT INTO Student_Course_Progress (Student_id, Course_id, Instructor_id, Instr
 (767, 6584, 999, 'Chester Ismay', 1.00);
 ```
 ##### 📌 Normalized to 2NF
-We separate Instructor details into their own table, since they depend only on Instructor_id, not the full (Student_id, Course_id) key.
+We separate **Instructor details** into their own table, since they depend only on **Instructor_id**, not the full (Student_id, Course_id) key.
 ```sql
 -- Student table
 CREATE TABLE Student (
@@ -140,7 +142,7 @@ INSERT INTO Course_Instructor (Course_id, Instructor_id) VALUES
 ```
 ### Third Normal Form (3NF)
 
-Removes transitive dependencies by ensuring that non-key attributes depend only on the primary key. This level of normalization builds on 2NF.
+Removes **transitive dependencies** by ensuring that non-key attributes depend only on the primary key. This level of normalization builds on 2NF.
 ##### Unnormalized (violates 2NF)
 ```sql
 CREATE TABLE Course_Info (
