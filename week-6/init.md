@@ -140,3 +140,57 @@ INSERT INTO Course_Instructor (Course_id, Instructor_id) VALUES
 ### Third Normal Form (3NF)
 
 Removes transitive dependencies by ensuring that non-key attributes depend only on the primary key. This level of normalization builds on 2NF.
+##### Unnormalized (violates 2NF)
+```sql
+CREATE TABLE Course_Info (
+    Course_id INT PRIMARY KEY,
+    Instructor_id INT,
+    Instructor_Name VARCHAR(100),
+    Tech VARCHAR(50)
+);
+
+INSERT INTO Course_Info (Course_id, Instructor_id, Instructor_Name, Tech) VALUES
+(2001, 560, 'Nick Carchedi', 'Python'),
+(2345, 658, 'Ginger Grant', 'SQL'),
+(6584, 999, 'Chester Ismay', 'R');
+```
+##### 📌 Normalize to 3NF
+```sql
+-- Instructors table (no redundancy)
+CREATE TABLE Instructor (
+    Instructor_id INT PRIMARY KEY,
+    Instructor_Name VARCHAR(100)
+);
+
+-- Courses table (each course belongs to one tech)
+CREATE TABLE Course (
+    Course_id INT PRIMARY KEY,
+    Tech VARCHAR(50)
+);
+
+-- Relationship: which instructor teaches which course
+CREATE TABLE Course_Instructor (
+    Course_id INT PRIMARY KEY,
+    Instructor_id INT,
+    FOREIGN KEY (Course_id) REFERENCES Course(Course_id),
+    FOREIGN KEY (Instructor_id) REFERENCES Instructor(Instructor_id)
+);
+
+-- Insert Instructors
+INSERT INTO Instructor (Instructor_id, Instructor_Name) VALUES
+(560, 'Nick Carchedi'),
+(658, 'Ginger Grant'),
+(999, 'Chester Ismay');
+
+-- Insert Courses
+INSERT INTO Course (Course_id, Tech) VALUES
+(2001, 'Python'),
+(2345, 'SQL'),
+(6584, 'R');
+
+-- Assign Instructors to Courses
+INSERT INTO Course_Instructor (Course_id, Instructor_id) VALUES
+(2001, 560),
+(2345, 658),
+(6584, 999);
+```
