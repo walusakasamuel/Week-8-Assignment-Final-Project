@@ -70,7 +70,91 @@ INSERT INTO Student_Courses (Student_id, Course_Name) VALUES
  ### Second Normal Form (2NF)
 
 Eliminates partial dependencies by ensuring that non-key attributes depend only on the primary key. What this means, in essence, is that there should be a direct relationship between each column and the primary key, and not between other columns.
+##### Unnormalized (violates 2NF)
+```sql
+CREATE TABLE Student_Course_Progress (
+    Student_id INT,
+    Course_id INT,
+    Instructor_id INT,
+    Instructor VARCHAR(100),
+    Progress DECIMAL(3,2),
+    PRIMARY KEY (Student_id, Course_id)
+);
 
+INSERT INTO Student_Course_Progress (Student_id, Course_id, Instructor_id, Instructor, Progress) VALUES
+(235, 2001, 560, 'Nick Carchedi', 0.55),
+(455, 2345, 658, 'Ginger Grant', 0.10),
+(767, 6584, 999, 'Chester Ismay', 1.00);
+```
+##### 📌 Normalized to 2NF
+We separate Instructor details into their own table, since they depend only on Instructor_id, not the full (Student_id, Course_id) key.
+```sql
+-- Student table
+CREATE TABLE Student (
+    Student_id INT PRIMARY KEY
+);
+
+-- Course table
+CREATE TABLE Course (
+    Course_id INT PRIMARY KEY
+);
+
+-- Instructor table (atomic, no redundancy)
+CREATE TABLE Instructor (
+    Instructor_id INT PRIMARY KEY,
+    Instructor_Name VARCHAR(100)
+);
+
+-- Student progress table (depends fully on Student + Course)
+CREATE TABLE Student_Course_Progress (
+    Student_id INT,
+    Course_id INT,
+    Progress DECIMAL(3,2),
+    PRIMARY KEY (Student_id, Course_id),
+    FOREIGN KEY (Student_id) REFERENCES Student(Student_id),
+    FOREIGN KEY (Course_id) REFERENCES Course(Course_id)
+);
+
+-- Course-Instructor relationship (each course has an instructor)
+CREATE TABLE Course_Instructor (
+    Course_id INT PRIMARY KEY,
+    Instructor_id INT,
+    FOREIGN KEY (Course_id) REFERENCES Course(Course_id),
+    FOREIGN KEY (Instructor_id) REFERENCES Instructor(Instructor_id)
+);
+
+-- Insert data
+-- Insert Students
+INSERT INTO Student (Student_id) VALUES
+(235),
+(455),
+(767);
+
+-- Insert Courses
+INSERT INTO Course (Course_id) VALUES
+(2001),
+(2345),
+(6584);
+
+-- Insert Instructors
+INSERT INTO Instructor (Instructor_id, Instructor_Name) VALUES
+(560, 'Nick Carchedi'),
+(658, 'Ginger Grant'),
+(999, 'Chester Ismay');
+
+-- Insert Student Progress
+INSERT INTO Student_Course_Progress (Student_id, Course_id, Progress) VALUES
+(235, 2001, 0.55),
+(455, 2345, 0.10),
+(767, 6584, 1.00);
+
+-- Insert Course–Instructor relationship
+INSERT INTO Course_Instructor (Course_id, Instructor_id) VALUES
+(2001, 560),
+(2345, 658),
+(6584, 999);
+
+```
 ### Third Normal Form (3NF)
 
 Removes transitive dependencies by ensuring that non-key attributes depend only on the primary key. This level of normalization builds on 2NF.
