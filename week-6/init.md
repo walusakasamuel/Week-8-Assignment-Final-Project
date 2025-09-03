@@ -156,6 +156,10 @@ INSERT INTO Course_Info (Course_id, Instructor_id, Instructor_Name, Tech) VALUES
 (6584, 999, 'Chester Ismay', 'R');
 ```
 ##### 📌 Normalize to 3NF
+We separate:
+- Instructor details into their own table.
+- Course details into their own table.
+- Keep Course_Instructor as a relationship table.
 ```sql
 -- Instructors table (no redundancy)
 CREATE TABLE Instructor (
