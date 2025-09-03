@@ -145,8 +145,9 @@ INSERT INTO Course_Instructor (Course_id, Instructor_id) VALUES
 Removes **transitive dependencies** by ensuring that non-key attributes depend only on the primary key. 
 
 This level of normalization builds on 2NF.
-**transitive dependencies** wehn non-key attributes depending on other non-key attributes.
-##### Unnormalized (violates 2NF)
+
+**transitive dependencies** is when non-key attributes depending on other non-key attributes.
+##### Unnormalized (violates 3NF)
 ```sql
 CREATE TABLE Course_Info (
     Course_id INT PRIMARY KEY,
