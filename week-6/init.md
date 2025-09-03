@@ -22,6 +22,20 @@ INSERT INTO PizzaOrders VALUES
 **First Normal Form (1NF)**
 
 This normalization level ensures that each column in your data contains only atomic values.
+##### Unnormalized Table
+```sql
+CREATE TABLE Student (
+    Student_id INT PRIMARY KEY,
+    Student_Email VARCHAR(100),
+    Courses_Completed VARCHAR(255)
+);
+
+INSERT INTO Student (Student_id, Student_Email, Courses_Completed) VALUES
+(235, 'jim@gmail.com', 'Introduction to Python, Intermediate Python'),
+(455, 'kelly@yahoo.com', 'Cleaning Data in R'),
+(767, 'amy@hotmail.com', 'Machine Learning Toolbox, Deep Learning in Python');
+
+```
 
 **Second Normal Form (2NF)**
 
