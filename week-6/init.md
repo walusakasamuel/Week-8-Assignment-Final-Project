@@ -142,7 +142,10 @@ INSERT INTO Course_Instructor (Course_id, Instructor_id) VALUES
 ```
 ### Third Normal Form (3NF)
 
-Removes **transitive dependencies** by ensuring that non-key attributes depend only on the primary key. This level of normalization builds on 2NF.
+Removes **transitive dependencies** by ensuring that non-key attributes depend only on the primary key. 
+
+This level of normalization builds on 2NF.
+**transitive dependencies** wehn non-key attributes depending on other non-key attributes.
 ##### Unnormalized (violates 2NF)
 ```sql
 CREATE TABLE Course_Info (
