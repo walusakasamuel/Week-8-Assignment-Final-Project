@@ -18,7 +18,6 @@ INSERT INTO Student (Student_id, Student_Email, Courses_Completed) VALUES
 (235, 'jim@gmail.com', 'Introduction to Python, Intermediate Python'),
 (455, 'kelly@yahoo.com', 'Cleaning Data in R'),
 (767, 'amy@hotmail.com', 'Machine Learning Toolbox, Deep Learning in Python');
-
 ```
 ##### 📌 Normalized to 1NF
 
@@ -137,7 +136,6 @@ INSERT INTO Course_Instructor (Course_id, Instructor_id) VALUES
 (2001, 560),
 (2345, 658),
 (6584, 999);
-
 ```
 ### Third Normal Form (3NF)
 
