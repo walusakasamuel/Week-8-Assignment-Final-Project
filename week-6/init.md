@@ -19,7 +19,7 @@ INSERT INTO PizzaOrders VALUES
 (3, 'Alice', '0711111111', 'Hawaiian', 'Pineapple, Ham, Cheese', 'Nairobi');
 ```
 
-**First Normal Form (1NF)**
+### First Normal Form (1NF) 
 
 This normalization level ensures that each column in your data contains only atomic values.
 ##### Unnormalized Table
@@ -36,11 +36,41 @@ INSERT INTO Student (Student_id, Student_Email, Courses_Completed) VALUES
 (767, 'amy@hotmail.com', 'Machine Learning Toolbox, Deep Learning in Python');
 
 ```
+##### 📌 Normalized to 1NF
 
-**Second Normal Form (2NF)**
+We split the repeating courses into a separate table:
+```sql
+-- Student table
+CREATE TABLE Student (
+    Student_id INT PRIMARY KEY,
+    Student_Email VARCHAR(100)
+);
+
+-- Courses table (atomic values)
+CREATE TABLE Student_Courses (
+    Course_id INT AUTO_INCREMENT PRIMARY KEY,
+    Student_id INT,
+    Course_Name VARCHAR(100),
+    FOREIGN KEY (Student_id) REFERENCES Student(Student_id)
+);
+
+-- Insert data
+INSERT INTO Student (Student_id, Student_Email) VALUES
+(235, 'jim@gmail.com'),
+(455, 'kelly@yahoo.com'),
+(767, 'amy@hotmail.com');
+
+INSERT INTO Student_Courses (Student_id, Course_Name) VALUES
+(235, 'Introduction to Python'),
+(235, 'Intermediate Python'),
+(455, 'Cleaning Data in R'),
+(767, 'Machine Learning Toolbox'),
+(767, 'Deep Learning in Python');
+```
+ ### Second Normal Form (2NF)
 
 Eliminates partial dependencies by ensuring that non-key attributes depend only on the primary key. What this means, in essence, is that there should be a direct relationship between each column and the primary key, and not between other columns.
 
-**Third Normal Form (3NF)**
+### Third Normal Form (3NF)
 
 Removes transitive dependencies by ensuring that non-key attributes depend only on the primary key. This level of normalization builds on 2NF.
