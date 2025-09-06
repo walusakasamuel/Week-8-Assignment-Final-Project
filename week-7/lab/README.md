@@ -12,3 +12,6 @@ Your responsibilities include:
 - Predicted hotel room prices based on the forecast.
 
 The final solution should allow hotel management to easily monitor weather conditions and make data-driven pricing decisions.
+
+### Architecture diagram
+<img width="871" height="301" alt="db" src="https://github.com/user-attachments/assets/c5201a3b-513b-49e5-bf37-8fcbd95ce377" />
