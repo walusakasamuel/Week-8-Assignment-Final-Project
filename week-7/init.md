@@ -69,10 +69,10 @@ CREATE DATABASE sampledb3;
 ```sql
 mysqldump -u root -p --all-databases > all_databases.sql
 ```
-## Accidentally removing a database
+## Accidentally deleting a database
 ```sql
-drop database sampledb1;
-drop database sampledb2;
+DROP DATABASE sampledb1;
+DROP DATABASE sampledb2;
 ```
 ### Restoring all databases
 ```sql
