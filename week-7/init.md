@@ -183,4 +183,12 @@ BY 'Pass123!';
 ```sql
 sudo mysql_secure_installation
 ```
-
+**Step 8.** Create folder to store backup files
+```bash
+pwd
+mkdir -p /data/backup
+```
+**Step 8.** Perform Backup
+```bash
+xtrabackup --backup --user=root --password='Pass123!' --target-dir=/home/ubuntu/data/backup
+```
