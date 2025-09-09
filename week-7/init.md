@@ -151,3 +151,36 @@ VALUES
 ```sql
 mysqldump -u root -p sales order_details > order_details.sql
 ```
+## Physical backup on a live server
+**Step 1.** Update APT Package List
+```bash
+sudo apt update; apt upgrade -y
+```
+**Step 2.** Install MySQL Server
+```bash
+sudo apt install mysql-server
+```
+**Step 3.** Enable MySQL service to auto-start on reboot
+```bash
+sudo systemctl enable mysql.service
+```
+**Step 4.** Start MySQL Service
+```bash
+sudo systemctl start mysql.service
+```
+**Step 5.** Check the status of MySQL Service
+```bash
+systemctl status mysql.service
+```
+**Step 6.** Log in to MySQL and change the root’s password
+```sql
+sudo mysql
+ALTER USER root@localhost 
+IDENTIFIED WITH mysql_native_password  
+BY 'Pass123!';
+```
+**Step 7.** Secure the MySQL installation
+```sql
+sudo mysql_secure_installation
+```
+
