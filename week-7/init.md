@@ -156,9 +156,9 @@ mysqldump -u root -p sales order_details > order_details.sql
 ```bash
 sudo apt update; apt upgrade -y
 ```
-**Step 2.** Install MySQL Server
+**Step 2.** Install MySQL Server & Percona-XtraBackup
 ```bash
-sudo apt install mysql-server
+sudo apt install mysql-server percona-xtrabackup
 ```
 **Step 3.** Enable MySQL service to auto-start on reboot
 ```bash
