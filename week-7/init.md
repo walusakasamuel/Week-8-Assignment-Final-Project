@@ -192,3 +192,29 @@ mkdir -p /data/backup
 ```bash
 xtrabackup --backup --user=root --password='Pass123!' --target-dir=/home/ubuntu/data/backup
 ```
+## Restore a full backup
+**Step 1.** Stop mysql Server
+```sql
+sudo systemctl stop mysql
+```
+**Step 2.** Remove old contents of datadir
+```sql
+sudo rm -rf /var/lib/mysql/*
+```
+**Step 3.** Remove old contents of datadir
+```sql
+xtrabackup --prepare --target-dir=/home/ubuntu/data/backup
+```
+**Step 4.** Run copy-back 
+```sql
+xtrabackup --copy-back --target-dir=/home/ubuntu/data/backup --datadir=/var/lib/mysql
+```
+**Step 5.** Change ownership and permissions
+```sql
+sudo chown -R mysql:mysql /var/lib/mysql
+sudo chmod -R 750 /var/lib/mysql
+```
+**Step 6.** Start MySQL
+```sql
+sudo systemctl start mysql
+```
