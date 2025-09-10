@@ -201,7 +201,7 @@ sudo systemctl stop mysql
 ```sql
 sudo rm -rf /var/lib/mysql/*
 ```
-**Step 3.** Remove old contents of datadir
+**Step 3.** Prepare backup
 ```sql
 xtrabackup --prepare --target-dir=/home/ubuntu/data/backup
 ```
