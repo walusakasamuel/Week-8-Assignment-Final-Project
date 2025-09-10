@@ -1,4 +1,8 @@
 ## 🎯 Hands-on Class Activity
+You are the Database Guardian 🛡️ your mission is to protect, rescue, and restore data.
+
+If you lose data… well, let’s just say the “Boss” won’t be happy. 😅
+
 ### Database Backup
 The **mysqldump** is a command-line utility in MySQL used for creating backups of MySQL databases.
 
