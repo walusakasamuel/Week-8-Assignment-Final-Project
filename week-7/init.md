@@ -186,7 +186,7 @@ sudo mysql_secure_installation
 **Step 8.** Create folder to store backup files
 ```bash
 pwd
-mkdir -p /data/backup
+mkdir -p data/backup
 ```
 **Step 8.** Perform Backup
 ```bash
