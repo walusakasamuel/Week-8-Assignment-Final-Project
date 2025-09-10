@@ -1,29 +1,32 @@
-# Database Backup
+## 🎯 Hands-on Class Activity
+### Database Backup
 The **mysqldump** is a command-line utility in MySQL used for creating backups of MySQL databases.
+
 The **mysqldump** tool allows you to dump the structure and/or data of one or more databases into a file, which you can use to restore the databases later.
+
 In practice, you often use the **mysqldump** for **backup** and **restore** operations, **database migration**, and **transferring databases** between servers.
 
-## Commands
+### Commands
 
-Creating a backup of a single database
+Creating a backup of a single **database**
 
 ```sql
   mysqldump -u username -p  db_name > path_to_backup_file
 ```
 
-Creating a backup of all databases
+Creating a backup **of all** databases
 
 ```sql
   mysqldump -u username -p -A > path_to_backup_file
 ```
 
-Creating a backup of data only
+Creating a backup of **data only**
 
 ```bash
   mysqldump -u username -p -t db_name > path_to_backup_file
 ```
 
-## How to Back Up and Restore a Database in MySQL
+### How to Back Up and Restore a Database in MySQL
 
 ```sql
   CREATE DATABASE hr;
@@ -49,7 +52,7 @@ Accidentally deleting some rows from a table
 ```sql
  ????????????????????????????????
 ```
-## Restoring a database
+### Restoring a database
 ```sql
 mysql -u root -p hr < hr.sql
 ```
@@ -58,18 +61,18 @@ mysql -u root -p hr < hr.sql
 USE hr;
 SELECT * FROM employees;
 ```
-## How to Back Up and Restore All Databases in MySQL
+### How to Back Up and Restore All Databases in MySQL
 #### Create sample database
 ```sql
 CREATE DATABASE sampledb1;
 CREATE DATABASE sampledb2;
 CREATE DATABASE sampledb3;
 ```
-## Backing up all databases
+### Backing up all databases
 ```sql
 mysqldump -u root -p --all-databases > all_databases.sql
 ```
-## Accidentally deleting a database
+### Accidentally deleting a database
 ```sql
 DROP DATABASE sampledb1;
 DROP DATABASE sampledb2;
@@ -78,7 +81,7 @@ DROP DATABASE sampledb2;
 ```sql
 mysql -u root -p < all_databases.sql
 ```
-## Backing Up MySQL Table
+### Backing Up MySQL Table
 ### Create sample database
 ```sql
 CREATE DATABASE sales;
@@ -151,7 +154,7 @@ VALUES
 ```sql
 mysqldump -u root -p sales order_details > order_details.sql
 ```
-## Physical backup on a live server
+### Physical backup on a live server
 **Step 1.** Update APT Package List
 ```bash
 sudo apt update; apt upgrade -y
@@ -192,7 +195,7 @@ mkdir -p data/backup
 ```bash
 xtrabackup --backup --user=root --password='Pass123!' --target-dir=/home/ubuntu/data/backup
 ```
-## Restore a full backup
+### Restore a full backup
 **Step 1.** Stop mysql Server
 ```sql
 sudo systemctl stop mysql
